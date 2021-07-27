@@ -65,6 +65,9 @@ f1.add(t2);
 f1.add(t3);
 f1.add(c2);
 
+f1.setForeground(Color.blue);
+f1.setBackground(Color.green);
+
 f1.setSize(420,240);
 f1.setVisible(true);
 

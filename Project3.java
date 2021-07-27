@@ -158,6 +158,12 @@ if(c1.getSelectedIndex()==0)
 {
 c2.select(0);
 }
+
+else if(c1.getSelectedIndex()==1)
+{
+c2.select(1);
+}
+
 }
 
 else if(e.getSource()==c2)
@@ -165,8 +171,14 @@ else if(e.getSource()==c2)
 
 if(c2.getSelectedIndex()==0)
 {
+c1.select(0);
+}
+
+else if(c2.getSelectedIndex()==1)
+{
 c1.select(1);
 }
+
 }
 
 }

@@ -6,12 +6,14 @@ import java.awt.event.*;
 class Project2a implements ActionListener
 {
 
-static Frame f10;
+Frame f10;
 Label l11;
 Button b12,b13;
 
 Project2a()
 {
+
+f10=new Frame("INSERT MORE FEILDS?");
 
 l11=new Label("DO YOU WANT TO INSERT MORE ROWS?");
 b12=new Button("YES");
@@ -26,6 +28,10 @@ b13.setBounds(160,140,60,20);
 f10.add(l11);
 f10.add(b12);
 f10.add(b13);
+
+f10.setSize(300,300);
+
+f10.setVisible(true);
 
 }
 

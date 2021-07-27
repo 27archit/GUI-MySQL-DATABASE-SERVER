@@ -109,15 +109,15 @@ f2.setVisible(false);
 
 else if(e.getSource()==b10)
 {
+Project2a p2a=new Project2a();
 try{
-//f10.setVisible(true);
 st=co.createStatement();
 rs=st.executeQuery("select * from "+t6.getText());
 rsmd=rs.getMetaData();
 int n=rsmd.getColumnCount();
 for(int i=1;i<=n;i++)
 {
-t[i].setText("");
+t[i-1].setText("");				
 }
 f9.setVisible(false);
 }catch(Exception ee)
