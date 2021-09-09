@@ -15,7 +15,7 @@ Statement st;
 
 Project6()
 {
-f6=new Frame("EXISTING TABELS");
+f6=new Frame("EXISTING TABLES");
 ta=new TextArea();
 b1=new Button("SHOW");
 b2=new Button("BACK");
@@ -36,7 +36,7 @@ b2.addActionListener(this);
 try
 {
 Class.forName("com.mysql.jdbc.Driver");
-co=DriverManager.getConnection("jdbc:mysql://localhost:3206/project","root","archit27nov@gmail.com");
+co=DriverManager.getConnection("jdbc:mysql://localhost:3206/"+Database.s,"root","archit27nov@gmail.com");
 }
 catch(Exception ee)
 {

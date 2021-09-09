@@ -21,7 +21,7 @@ b13=new Button("NO");
 
 f10.setLayout(null);
 
-l11.setBounds(30,80,210,20);
+l11.setBounds(30,80,240,20);
 b12.setBounds(80,140,60,20);
 b13.setBounds(160,140,60,20);
 
@@ -33,6 +33,9 @@ f10.setSize(300,300);
 
 f10.setVisible(true);
 
+b12.addActionListener(this);
+b13.addActionListener(this);
+
 }
 
 public void actionPerformed(ActionEvent e)
@@ -41,7 +44,8 @@ public void actionPerformed(ActionEvent e)
 if(e.getSource()==b12)
 {
 f10.setVisible(false);
-Project2 a=new Project2();
+Project2.f2.setVisible(false);
+Project2.fun();
 }
 
 else if(e.getSource()==b13)

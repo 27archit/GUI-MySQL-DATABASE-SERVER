@@ -9,7 +9,9 @@ static Frame f;
 Button b1,b2;
 Label l1,l2,l3;
 TextField t1,t2;
-Choice c1,c2;
+static Choice c1;
+Connection co;
+Statement st;
 
 Project3a()
 {
@@ -40,11 +42,11 @@ c1.add("CHAR");
 c1.add("INT");
 c1.add("TIMESTAMP");
 c1.add("DATETIME");
-c1.add("BLOB");
-c1.add("CLOB");
-c1.add("LONGBLOB");
-c1.add("TINYTEXT");
-c1.add("TINYINT");
+//c1.add("BLOB");
+//c1.add("CLOB");
+//c1.add("LONGBLOB");
+//c1.add("TINYTEXT");
+//c1.add("TINYINT");
 
 f.add(l1);
 f.add(l2);
@@ -57,8 +59,8 @@ l1.setBounds(20,40,200,20);
 l2.setBounds(20,80,200,20);
 l3.setBounds(20,120,200,20);
 
-b1.setBounds(140,160,60,20);
-b2.setBounds(220,160,60,20);
+b1.setBounds(120,160,80,20);
+b2.setBounds(220,160,80,20);
 
 t1.setBounds(240,40,150,20);
 t2.setBounds(240,120,150,20);
@@ -73,6 +75,14 @@ b2.addActionListener(this);
 
 f.setVisible(true);
 
+try{
+Class.forName("com.mysql.jdbc.Driver");
+co=DriverManager.getConnection("jdbc:mysql://localhost:3206/"+Database.s,"root","archit27nov@gmail.com");
+}catch(Exception e)
+{
+System.out.print(e);
+}
+
 }
 
 public void actionPerformed(ActionEvent e)
@@ -80,9 +90,31 @@ public void actionPerformed(ActionEvent e)
 if(e.getSource()==b1)
 {
 
+try{
+
 if(Project3.c.getSelectedIndex()==0)
 {
 
+st=co.createStatement();
+
+if(c1.getSelectedIndex()==0)
+{
+st.executeUpdate("alter table "+Project3.t7.getText()+" add "+t1.getText()+" "+c1.getSelectedItem()+" ("+Integer.parseInt(t2.getText())+") ");
+
+}
+
+else
+{
+
+st.executeUpdate("alter table "+Project3.t7.getText()+" add "+t1.getText()+" "+c1.getSelectedItem());
+
+}
+
+}
+
+}catch(Exception ee)
+{
+System.out.print("button "+ee);
 }
 
 }

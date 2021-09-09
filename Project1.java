@@ -10,6 +10,8 @@ Label l2,l3,l4,l5;
 TextField t1,t2,t3;
 Button b2,b3;
 Choice c2;
+Connection co;
+
 Project1()
 {
 f1=new Frame("CREATING NEW TABLE");
@@ -76,14 +78,14 @@ b3.addActionListener(this);
 
 c2.addItemListener(this);
 
-//try
-//{
-//Class.forName("com.mysql.jdbc.Driver");
-//co=DriverManager.getConnection("jdbc:mysql://localhost:3206/project","root","archit27nov@gmail.com");
-//}catch(Exception e)
-//{
-//System.out.print("conn"+e);
-//}
+try
+{
+Class.forName("com.mysql.jdbc.Driver");
+co=DriverManager.getConnection("jdbc:mysql://localhost:3206/"+Database.s,"root","archit27nov@gmail.com");
+}catch(Exception e)
+{
+System.out.print("conn"+e);
+}
 
 }
 

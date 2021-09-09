@@ -15,10 +15,15 @@ Connection co;
 Statement st;
 ResultSet rs;
 ResultSetMetaData rsmd;
+JTable t;
+JScrollPane jsp;
+DefaultTableModel dtm;
 
 Project5()
 {
 f5=new Frame("FETCHING RECORDS");
+dtm=new DefaultTableModel();
+t=new JTable(dtm);
 b1=new Button("SHOW");
 b2=new Button("RESET");
 b3=new Button("CONDITIONS");
@@ -84,7 +89,7 @@ fc.setSize(300,300);
 try
 {
 Class.forName("com.mysql.jdbc.Driver");
-co=DriverManager.getConnection("jdbc:mysql://localhost:3206/project","root","archit27nov@gmail.com");
+co=DriverManager.getConnection("jdbc:mysql://localhost:3206/"+Database.s,"root","archit27nov@gmail.com");
 }
 catch(Exception ee)
 {
